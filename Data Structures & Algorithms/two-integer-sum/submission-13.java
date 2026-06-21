@@ -1,0 +1,17 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        HashMap<Integer, Integer> map = new HashMap();
+        for(int i = 0 ; i < nums.length;i++)
+        {
+            int match = map.getOrDefault(target - nums[i] , -1);
+            if(match != -1)
+            {
+                return new int[] {match,i};
+            }else
+            {
+                 map.put(nums[i],i);
+            }
+        }
+        return new int[] { -1,-1} ;
+    }
+}
